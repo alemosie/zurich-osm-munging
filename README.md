@@ -4,7 +4,7 @@ Note: complete data files (both source `.osm` and sanitized `.json`) have been a
 
 ## Source data
 
-![Zurich OSM](images/zurich_map.png)
+<img src="images/zurich_map.png" width="300">
 
 The OpenStreetMap (OSM) extract for Zurich, Switzerland contains covers the city center and surrounding suburbs, and contains data on establishments, transportation systems, points of interest and more for the area. The **[OSM XML dataset from MapZen](https://mapzen.com/data/metro-extracts/metro/zurich_switzerland/) is 614.7 MB**.
 
@@ -60,11 +60,11 @@ Two-tier key types & conversions:
 }
 ```
 
-Also, some separators departed from the standard `:` separator, and had ".", like `surface.material`.  
+Also, some separators departed from the standard `:` separator, and had `.`, like `surface.material`.  
 
 #### Tag value separators
 
-Because of a lack of domain knowledge, I had to conduct research on data found in the sample to ensure that I had the necessary context to handle the data correctly. Take the following XML:
+I had to conduct research on the data to ensure that I was handling the data correctly. Take the following XML:
 
 ```
 <tag k="destination" v="Bern;Chur;Luzern;Flughafen;Nordring-Zürich"/>
@@ -78,13 +78,14 @@ Because of a lack of domain knowledge, I had to conduct research on data found i
 <tag k="bus:lanes" v="no|designated" />
 ```
 
-`;`, `-`, and "|" all potentially act as separators.
+`;`, `-`, and `|` all potentially act as separators.
 
 The first portion with `"Bern;Chur;Luzern;Flughafen;Nordring-Zürich"` is meant to be separated, as all of those are towns/cities in Switzerland. The third is also a clear separator. Values are converted to `["Bern","Chur","Luzern","Flughafen","Nordring-Zürich"]` and `["no", "designated"]`.
 
 Searches for `"Salomon-Bleuler-Weg"` on [other maps](https://www.google.com/maps/place/Salomon-Bleuler-Weg,+8400+Winterthur,+Switzerland/@47.4916183,8.7383565,18z/data=!4m5!3m4!1s0x479a9997ae1936e5:0xb2db2c6fd90d87eb!8m2!3d47.4915712!4d8.7395501), however, confirm that the value is indeed the full name of the street.
 
-![Salomon-Bleuler-Weg](images/sbw.png)
+<img src="images/sbw.png" width="200">
+
 
 
 
