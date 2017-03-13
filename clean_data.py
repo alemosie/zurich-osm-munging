@@ -12,30 +12,9 @@ import codecs
 # Per http://wiki.openstreetmap.org/wiki/OSM_XML#Contents, only three types of root tags: node, way, relation
 """
 Challenges:
-    <tag k="wheelchair" v="limited"/>
-    <tag k="wheelchair:description" v="rund 50% der Fahrzeuge verkehren mit Niederflur-Einstieg"/>
-    How to handle information
 
     - What to do with refs
     http://wiki.openstreetmap.org/wiki/Key:ref
-
-    - How many ":" split layers to account for
-
-    - Handling special characters, and parts of the string that can be sanitized
-    			<tag k="name" v="Europabrücke"/>
-
-    - Domain knowledge
-        Salomon-Bleuler-Weg not multiple locations, but a street!
-
-    - Splitting text on ways
-    		<tag k="destination" v="St. Gallen;Chur;Luzern"/>
-			<tag k="turn:lanes:forward" v="slight_left|slight_left|slight_right"/>
-
-    - Source fields
-        	<tag k="maxspeed" v="100"/>
-    		<tag k="source:maxspeed" v="sign"/>
-
-bson.errors.InvalidDocument: key 'surface.material' must not contain '.'
 
 
 Analyses:

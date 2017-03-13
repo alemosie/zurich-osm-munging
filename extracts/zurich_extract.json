@@ -1,0 +1,1459 @@
+[
+  {
+    "position": [
+      47.4569627,
+      8.2756491
+    ],
+    "type": "node",
+    "id": "453654",
+    "created": {
+      "uid": "1136962",
+      "changeset": "23134783",
+      "version": "6",
+      "user": "stupot0041",
+      "timestamp": "2014-06-25T04:07:12Z"
+    }
+  },
+  {
+    "position": [
+      47.4579907,
+      8.2822799
+    ],
+    "type": "node",
+    "id": "453657",
+    "created": {
+      "uid": "555807",
+      "changeset": "22640865",
+      "version": "6",
+      "user": "Internethias",
+      "timestamp": "2014-05-30T15:53:20Z"
+    }
+  },
+  {
+    "position": [
+      47.4584322,
+      8.2854783
+    ],
+    "type": "node",
+    "id": "453658",
+    "created": {
+      "uid": "227502",
+      "changeset": "15770248",
+      "version": "8",
+      "user": "ajk",
+      "timestamp": "2013-04-18T08:20:50Z"
+    }
+  },
+  {
+    "position": [
+      47.4546294,
+      8.3273318
+    ],
+    "type": "node",
+    "id": "453686",
+    "created": {
+      "uid": "92387",
+      "changeset": "28767831",
+      "version": "7",
+      "user": "SimonPoole",
+      "timestamp": "2015-02-11T08:38:24Z"
+    }
+  },
+  {
+    "position": [
+      47.4546585,
+      8.3292809
+    ],
+    "type": "node",
+    "id": "453687",
+    "created": {
+      "uid": "92387",
+      "changeset": "28767831",
+      "version": "5",
+      "user": "SimonPoole",
+      "timestamp": "2015-02-11T08:38:24Z"
+    }
+  },
+  {
+    "created": {
+      "uid": "92387",
+      "changeset": "28767831",
+      "version": "4",
+      "user": "SimonPoole",
+      "timestamp": "2015-02-11T08:38:24Z"
+    },
+    "ele": "380.338745117",
+    "time": "2006-01-15T07:35:12Z",
+    "position": [
+      47.4546396,
+      8.3297404
+    ],
+    "type": "node",
+    "id": "453688"
+  },
+  {
+    "position": [
+      47.4545018,
+      8.3310323
+    ],
+    "type": "node",
+    "id": "453689",
+    "created": {
+      "uid": "92387",
+      "changeset": "28767831",
+      "version": "5",
+      "user": "SimonPoole",
+      "timestamp": "2015-02-11T08:38:24Z"
+    }
+  },
+  {
+    "position": [
+      47.454208,
+      8.3324786
+    ],
+    "type": "node",
+    "id": "453691",
+    "created": {
+      "uid": "92387",
+      "changeset": "28767831",
+      "version": "5",
+      "user": "SimonPoole",
+      "timestamp": "2015-02-11T08:38:24Z"
+    }
+  },
+  {
+    "position": [
+      47.4540939,
+      8.3328984
+    ],
+    "type": "node",
+    "id": "453692",
+    "created": {
+      "uid": "92387",
+      "changeset": "33712366",
+      "version": "8",
+      "user": "SimonPoole",
+      "timestamp": "2015-08-31T19:38:42Z"
+    }
+  },
+  {
+    "name": "Wettingen-Ost",
+    "created": {
+      "uid": "92387",
+      "changeset": "28767831",
+      "version": "7",
+      "user": "SimonPoole",
+      "timestamp": "2015-02-11T08:38:20Z"
+    },
+    "type": "node",
+    "position": [
+      47.4536053,
+      8.3342633
+    ],
+    "ref": "56",
+    "id": "453694",
+    "highway": "motorway_junction"
+  },
+  {
+    "position": [
+      47.4524946,
+      8.3361212
+    ],
+    "ele": "393.31652832",
+    "type": "node",
+    "id": "453695",
+    "created": {
+      "uid": "92387",
+      "changeset": "28767831",
+      "version": "5",
+      "user": "SimonPoole",
+      "timestamp": "2015-02-11T08:38:24Z"
+    }
+  },
+  {
+    "position": [
+      47.4517929,
+      8.3368914
+    ],
+    "type": "node",
+    "id": "453696",
+    "created": {
+      "uid": "92387",
+      "changeset": "28767831",
+      "version": "6",
+      "user": "SimonPoole",
+      "timestamp": "2015-02-11T08:38:24Z"
+    }
+  },
+  {
+    "position": [
+      47.4503709,
+      8.3380603
+    ],
+    "ele": "393.797241211",
+    "type": "node",
+    "id": "453697",
+    "created": {
+      "uid": "7412",
+      "changeset": "9498701",
+      "version": "4",
+      "user": "mjulius",
+      "timestamp": "2011-10-08T01:06:05Z"
+    }
+  },
+  {
+    "position": [
+      47.4486958,
+      8.3392753
+    ],
+    "type": "node",
+    "id": "453698",
+    "created": {
+      "uid": "74900",
+      "changeset": "9850200",
+      "version": "5",
+      "user": "FischersFritz",
+      "timestamp": "2011-11-17T00:42:58Z"
+    }
+  },
+  {
+    "position": [
+      47.4465294,
+      8.3408644
+    ],
+    "type": "node",
+    "id": "453699",
+    "created": {
+      "uid": "74900",
+      "changeset": "9850200",
+      "version": "5",
+      "user": "FischersFritz",
+      "timestamp": "2011-11-17T00:42:58Z"
+    }
+  },
+  {
+    "position": [
+      47.4443078,
+      8.3424779
+    ],
+    "type": "node",
+    "id": "453700",
+    "created": {
+      "uid": "74900",
+      "changeset": "9850200",
+      "version": "5",
+      "user": "FischersFritz",
+      "timestamp": "2011-11-17T00:42:58Z"
+    }
+  },
+  {
+    "position": [
+      47.4422613,
+      8.3439703
+    ],
+    "type": "node",
+    "id": "453701",
+    "created": {
+      "uid": "74900",
+      "changeset": "9850200",
+      "version": "4",
+      "user": "FischersFritz",
+      "timestamp": "2011-11-17T00:42:59Z"
+    }
+  },
+  {
+    "position": [
+      47.4396874,
+      8.3460741
+    ],
+    "type": "node",
+    "id": "453702",
+    "created": {
+      "uid": "92387",
+      "changeset": "28204793",
+      "version": "8",
+      "user": "SimonPoole",
+      "timestamp": "2015-01-17T10:48:38Z"
+    }
+  },
+  {
+    "position": [
+      47.4392282,
+      8.3465421
+    ],
+    "type": "node",
+    "id": "453703",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "6",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-16T00:02:20Z"
+    }
+  },
+  {
+    "position": [
+      47.4366472,
+      8.3502465
+    ],
+    "type": "node",
+    "id": "453706",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "6",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4358418,
+      8.3519931
+    ],
+    "type": "node",
+    "id": "453707",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "6",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4331035,
+      8.3584704
+    ],
+    "type": "node",
+    "id": "453710",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "5",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4317925,
+      8.3609104
+    ],
+    "type": "node",
+    "id": "453711",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "5",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4310916,
+      8.3622828
+    ],
+    "type": "node",
+    "id": "453712",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "6",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4290997,
+      8.3674847
+    ],
+    "type": "node",
+    "id": "453715",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "6",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4270935,
+      8.3731929
+    ],
+    "type": "node",
+    "id": "453717",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "5",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4262528,
+      8.3755914
+    ],
+    "type": "node",
+    "id": "453718",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "5",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4250933,
+      8.3789156
+    ],
+    "type": "node",
+    "id": "453719",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "5",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4241276,
+      8.3818775
+    ],
+    "type": "node",
+    "id": "453720",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "5",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4233892,
+      8.3846235
+    ],
+    "type": "node",
+    "id": "453721",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "5",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4229282,
+      8.3869145
+    ],
+    "type": "node",
+    "id": "453722",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "5",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4225821,
+      8.3893381
+    ],
+    "type": "node",
+    "id": "453723",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "6",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4220954,
+      8.3960764
+    ],
+    "type": "node",
+    "id": "453725",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "6",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4219055,
+      8.3985377
+    ],
+    "type": "node",
+    "id": "453726",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "7",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4213671,
+      8.4027842
+    ],
+    "type": "node",
+    "id": "453727",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "7",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4211434,
+      8.4039918
+    ],
+    "type": "node",
+    "id": "453728",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "7",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.420556,
+      8.4066387
+    ],
+    "type": "node",
+    "id": "453729",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "7",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.4197586,
+      8.4094708
+    ],
+    "type": "node",
+    "id": "453730",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "7",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:53Z"
+    }
+  },
+  {
+    "position": [
+      47.41901,
+      8.4116454
+    ],
+    "type": "node",
+    "id": "453731",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "6",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:54Z"
+    }
+  },
+  {
+    "position": [
+      47.4166638,
+      8.4169577
+    ],
+    "type": "node",
+    "id": "453733",
+    "created": {
+      "uid": "7412",
+      "changeset": "26266939",
+      "version": "8",
+      "user": "mjulius",
+      "timestamp": "2014-10-22T22:22:08Z"
+    }
+  },
+  {
+    "position": [
+      47.4156191,
+      8.4190819
+    ],
+    "type": "node",
+    "id": "453734",
+    "created": {
+      "uid": "1016290",
+      "changeset": "41634289",
+      "version": "9",
+      "user": "Amaroussi",
+      "timestamp": "2016-08-23T10:13:03Z"
+    }
+  },
+  {
+    "name": "Limmattaler Kreuz",
+    "created": {
+      "uid": "7412",
+      "changeset": "26266939",
+      "version": "9",
+      "user": "mjulius",
+      "timestamp": "2014-10-22T22:22:07Z"
+    },
+    "type": "node",
+    "position": [
+      47.4138194,
+      8.4227843
+    ],
+    "ref": "59",
+    "id": "453735",
+    "highway": "motorway_junction"
+  },
+  {
+    "position": [
+      47.4128869,
+      8.4250238
+    ],
+    "type": "node",
+    "id": "453736",
+    "created": {
+      "uid": "7412",
+      "changeset": "9503354",
+      "version": "5",
+      "user": "mjulius",
+      "timestamp": "2011-10-08T14:59:22Z"
+    }
+  },
+  {
+    "position": [
+      47.4118967,
+      8.427693
+    ],
+    "type": "node",
+    "id": "453737",
+    "created": {
+      "uid": "7412",
+      "changeset": "26266939",
+      "version": "7",
+      "user": "mjulius",
+      "timestamp": "2014-10-22T21:47:44Z"
+    }
+  },
+  {
+    "position": [
+      47.4111279,
+      8.4304225
+    ],
+    "type": "node",
+    "id": "453738",
+    "created": {
+      "uid": "7412",
+      "changeset": "26266939",
+      "version": "7",
+      "user": "mjulius",
+      "timestamp": "2014-10-22T21:47:44Z"
+    }
+  },
+  {
+    "position": [
+      47.4105225,
+      8.4335266
+    ],
+    "type": "node",
+    "id": "453740",
+    "created": {
+      "uid": "7412",
+      "changeset": "26266939",
+      "version": "11",
+      "user": "mjulius",
+      "timestamp": "2014-10-22T21:47:44Z"
+    }
+  },
+  {
+    "position": [
+      47.4101583,
+      8.4382415
+    ],
+    "type": "node",
+    "id": "453741",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "7",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:54Z"
+    }
+  },
+  {
+    "position": [
+      47.4101929,
+      8.4404985
+    ],
+    "type": "node",
+    "id": "453742",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "5",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:54Z"
+    }
+  },
+  {
+    "position": [
+      47.4103067,
+      8.4431391
+    ],
+    "type": "node",
+    "id": "453743",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "3",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:54Z"
+    }
+  },
+  {
+    "position": [
+      47.4103648,
+      8.4446525
+    ],
+    "type": "node",
+    "id": "453744",
+    "created": {
+      "uid": "74900",
+      "changeset": "15379224",
+      "version": "3",
+      "user": "FischersFritz",
+      "timestamp": "2013-03-15T23:55:54Z"
+    }
+  },
+  {
+    "position": [
+      47.4103726,
+      8.4464212
+    ],
+    "ele": "392.35534668",
+    "type": "node",
+    "id": "453745",
+    "created": {
+      "uid": "186651",
+      "changeset": "6377436",
+      "version": "3",
+      "user": "Teddych",
+      "timestamp": "2010-11-15T13:35:31Z"
+    }
+  },
+  {
+    "wheelchair": {
+      "description": "rund 50% der Fahrzeuge verkehren mit Niederflur-Einstieg",
+      "base_value": "limited"
+    },
+    "route": "tram",
+    "from": "Klusplatz",
+    "name": "Tram 3: Klusplatz —> Albisrieden",
+    "created": {
+      "uid": "835140",
+      "changeset": "35493231",
+      "version": "32",
+      "user": "nounours77",
+      "timestamp": "2015-11-21T18:01:01Z"
+    },
+    "ref": "3",
+    "colour": "#00923c",
+    "relations": [
+      {
+        "stop": "153479647"
+      },
+      {
+        "stop": "2640649206"
+      },
+      {
+        "stop": "28887272"
+      },
+      {
+        "stop": "94583655"
+      },
+      {
+        "stop": "253208940"
+      },
+      {
+        "stop": "48932817"
+      },
+      {
+        "stop": "235529623"
+      },
+      {
+        "stop": "235521050"
+      },
+      {
+        "stop": "47775233"
+      },
+      {
+        "stop": "140425855"
+      },
+      {
+        "stop": "319291435"
+      },
+      {
+        "stop": "1044085700"
+      },
+      {
+        "stop": "4366159"
+      },
+      {
+        "stop": "3320816052"
+      },
+      {
+        "stop": "30000239"
+      },
+      {
+        "way": "208812258"
+      },
+      {
+        "way": "144553810"
+      },
+      {
+        "way": "28127777"
+      },
+      {
+        "way": "10678559"
+      },
+      {
+        "way": "27410058"
+      },
+      {
+        "way": "27410059"
+      },
+      {
+        "way": "28127891"
+      },
+      {
+        "way": "217403560"
+      },
+      {
+        "way": "371347525"
+      },
+      {
+        "way": "140717780"
+      },
+      {
+        "way": "217403564"
+      },
+      {
+        "way": "374532889"
+      },
+      {
+        "way": "4575016"
+      },
+      {
+        "way": "218316340"
+      },
+      {
+        "way": "217199856"
+      },
+      {
+        "way": "217447883"
+      },
+      {
+        "way": "217447888"
+      },
+      {
+        "way": "217447877"
+      },
+      {
+        "way": "218316356"
+      },
+      {
+        "way": "218320628"
+      },
+      {
+        "way": "218455032"
+      },
+      {
+        "way": "218455030"
+      },
+      {
+        "node": "2275723458"
+      },
+      {
+        "node": "2275787449"
+      },
+      {
+        "node": "2275787478"
+      },
+      {
+        "way": "218455028"
+      },
+      {
+        "node": "2277024836"
+      },
+      {
+        "way": "218455041"
+      },
+      {
+        "node": "2277024797"
+      },
+      {
+        "way": "218455033"
+      },
+      {
+        "node": "2277024777"
+      },
+      {
+        "way": "218455045"
+      },
+      {
+        "way": "218455480"
+      },
+      {
+        "way": "218455481"
+      },
+      {
+        "node": "2277144228"
+      },
+      {
+        "way": "218467051"
+      },
+      {
+        "node": "2277144218"
+      },
+      {
+        "way": "218467053"
+      },
+      {
+        "node": "2277144140"
+      },
+      {
+        "way": "220638933"
+      },
+      {
+        "way": "218931360"
+      },
+      {
+        "node": "253197081"
+      },
+      {
+        "node": "2281357403"
+      },
+      {
+        "way": "218937800"
+      },
+      {
+        "way": "218931365"
+      },
+      {
+        "node": "2281357435"
+      },
+      {
+        "way": "218937803"
+      },
+      {
+        "node": "26823632"
+      },
+      {
+        "node": "2296971361"
+      },
+      {
+        "way": "220593833"
+      },
+      {
+        "node": "2297304033"
+      },
+      {
+        "way": "182560839"
+      },
+      {
+        "node": "891864924"
+      },
+      {
+        "node": "2297325500"
+      },
+      {
+        "node": "2309435426"
+      },
+      {
+        "stop": "2264836195"
+      },
+      {
+        "stop": "3482369645"
+      }
+    ],
+    "to": "Albisrieden",
+    "operator": "VBZ",
+    "type": "route",
+    "id": "2807069",
+    "network": "ZVV"
+  },
+  {
+    "network": "ZVV",
+    "created": {
+      "uid": "38804",
+      "changeset": "46762505",
+      "version": "1",
+      "user": "Victor Bielawski",
+      "timestamp": "2017-03-11T13:28:03Z"
+    },
+    "uic_name": "Thalwil, Sonnenberg",
+    "relations": [
+      {
+        "stop": "4729139771"
+      },
+      {
+        "way": "479876778"
+      },
+      {
+        "stop": "4729139770"
+      },
+      {
+        "way": "479876775"
+      }
+    ],
+    "public_transport": "stop_area",
+    "type": "public_transport",
+    "id": "7063663",
+    "name": "Thalwil, Sonnenberg"
+  },
+  {
+    "landuse": "farmyard",
+    "type": "multipolygon",
+    "id": "7014859",
+    "relations": [
+      {
+        "way": "477445213"
+      }
+    ],
+    "created": {
+      "uid": "465052",
+      "changeset": "46436761",
+      "version": "2",
+      "user": "hecktor",
+      "timestamp": "2017-02-27T09:29:17Z"
+    }
+  },
+  {
+    "amenity": "hospital",
+    "addr": {
+      "city": "Bülach",
+      "street": "Spitalstrasse"
+    },
+    "emergency": "yes",
+    "created": {
+      "uid": "481380",
+      "changeset": "46316083",
+      "version": "1",
+      "user": "Nzara",
+      "timestamp": "2017-02-22T19:02:59Z"
+    },
+    "wheelchair": "yes",
+    "relations": [
+      {
+        "way": "158608437"
+      },
+      {
+        "way": "476381804"
+      }
+    ],
+    "type": "multipolygon",
+    "id": "7002984",
+    "name": "Spital Bülach"
+  },
+  {
+    "landuse": "allotments",
+    "type": "multipolygon",
+    "id": "7002989",
+    "relations": [
+      {
+        "way": "476382698"
+      },
+      {
+        "way": "476382697"
+      }
+    ],
+    "created": {
+      "uid": "481380",
+      "changeset": "46316197",
+      "version": "1",
+      "user": "Nzara",
+      "timestamp": "2017-02-22T19:06:54Z"
+    }
+  },
+  {
+    "restriction": "only_straight_on",
+    "type": "restriction",
+    "id": "7004207",
+    "relations": [
+      {
+        "way": "41266876"
+      },
+      {
+        "node": "365839514"
+      },
+      {
+        "way": "476580917"
+      }
+    ],
+    "created": {
+      "uid": "2110714",
+      "changeset": "46332377",
+      "version": "1",
+      "user": "captain_slow",
+      "timestamp": "2017-02-23T09:52:06Z"
+    }
+  },
+  {
+    "maxspeed": {
+      "source": "sign",
+      "base_value": "100"
+    },
+    "lanes": "2",
+    "created": {
+      "uid": "35560",
+      "changeset": "25553978",
+      "version": "35",
+      "user": "Peilscheibe",
+      "timestamp": "2014-09-20T06:57:38Z"
+    },
+    "ref": [
+      "A1",
+      "A4"
+    ],
+    "refs": [
+      "17284541",
+      "256031460",
+      "1483901317",
+      "1483901318",
+      "256031461"
+    ],
+    "oneway": "yes",
+    "lit": "yes",
+    "int_ref": [
+      "E 41",
+      "E 60"
+    ],
+    "toll": "yes",
+    "destination": {
+      "symbol": "airport",
+      "base_value": [
+        "Bern",
+        "Chur",
+        "Luzern",
+        "Flughafen",
+        "Nordring-Zürich"
+      ]
+    },
+    "type": "way",
+    "id": "4072310",
+    "highway": "motorway"
+  },
+  {
+    "maxspeed": "80",
+    "lanes": "3",
+    "created": {
+      "uid": "1016290",
+      "changeset": "41634289",
+      "version": "23",
+      "user": "Amaroussi",
+      "timestamp": "2016-08-23T10:12:50Z"
+    },
+    "ref": [
+      "A1",
+      "A3"
+    ],
+    "refs": [
+      "453735",
+      "92280667"
+    ],
+    "oneway": "yes",
+    "lit": "yes",
+    "int_ref": "E 60",
+    "toll": "yes",
+    "destination": [
+      "St. Gallen",
+      "Chur",
+      "Luzern"
+    ],
+    "type": "way",
+    "id": "4072320",
+    "highway": "motorway"
+  },
+  {
+    "bridge": "yes",
+    "layer": "1",
+    "hazmat": "no",
+    "lanes": "2",
+    "name": "Europabrücke",
+    "created": {
+      "uid": "2965963",
+      "changeset": "45569309",
+      "version": "26",
+      "user": "Jonathan Masur",
+      "timestamp": "2017-01-27T18:08:01Z"
+    },
+    "hgv": "no",
+    "refs": [
+      "249091984",
+      "1264083863",
+      "1247641714",
+      "92206459",
+      "1770708062",
+      "1336695313",
+      "4364058"
+    ],
+    "maxweight": "10",
+    "elevated": "+1",
+    "cycleway": "track",
+    "maxspeed": "50",
+    "oneway": "yes",
+    "type": "way",
+    "id": "1027169",
+    "highway": "secondary"
+  },
+  {
+    "maxspeed": "30",
+    "name": "Lyrenweg",
+    "created": {
+      "uid": "2110714",
+      "changeset": "45788171",
+      "version": "13",
+      "user": "captain_slow",
+      "timestamp": "2017-02-03T19:32:14Z"
+    },
+    "sac_scale": "hiking",
+    "refs": [
+      "4366143",
+      "3253499536",
+      "4366145",
+      "3312069272",
+      "2579962834",
+      "352933785",
+      "2737030226",
+      "2579962854",
+      "4660751003",
+      "2579717439",
+      "443798794"
+    ],
+    "noexit": "yes",
+    "type": "way",
+    "id": "1027757",
+    "highway": "residential"
+  },
+  {
+    "maxspeed": "125",
+    "created": {
+      "uid": "2986880",
+      "changeset": "36091807",
+      "version": "29",
+      "user": "reswert",
+      "timestamp": "2015-12-21T18:03:11Z"
+    },
+    "ref": "905",
+    "refs": [
+      "148883010",
+      "1189293913",
+      "257919694"
+    ],
+    "electrified": "contact_line",
+    "operator": "SBB",
+    "tracks": "1",
+    "cutting": "yes",
+    "frequency": "16.7",
+    "voltage": "15000",
+    "usage": "branch",
+    "gauge": "1435",
+    "railway": "rail",
+    "type": "way",
+    "id": "3847670"
+  },
+  {
+    "maxspeed": "80",
+    "created": {
+      "uid": "481380",
+      "changeset": "42376271",
+      "version": "28",
+      "user": "Nzara",
+      "timestamp": "2016-09-23T14:58:39Z"
+    },
+    "ref": "4",
+    "refs": [
+      "1231195444",
+      "2208595582",
+      "1231195402",
+      "1231195308",
+      "1231195399",
+      "250720749"
+    ],
+    "electrified": "contact_line",
+    "operator": "SBB",
+    "tracks": "1",
+    "frequency": "16.7",
+    "gauge": "1435",
+    "voltage": "15000",
+    "usage": "branch",
+    "railway": "rail",
+    "type": "way",
+    "id": "3847672"
+  },
+  {
+    "maxspeed": "50",
+    "name": "Altstetterstrasse",
+    "created": {
+      "uid": "2965963",
+      "changeset": "45588342",
+      "version": "30",
+      "user": "Jonathan Masur",
+      "timestamp": "2017-01-28T11:01:20Z"
+    },
+    "refs": [
+      "4366142",
+      "666297396",
+      "3312069287",
+      "666297386",
+      "352933791",
+      "3311936960",
+      "27005559",
+      "142093531",
+      "4366140",
+      "481443839",
+      "4366139",
+      "3256543708",
+      "503707643",
+      "3256543737",
+      "3256543767",
+      "481443840",
+      "312335165",
+      "481443850",
+      "2305354548",
+      "3950528649",
+      "3406933530",
+      "1336713902",
+      "1388718951",
+      "3259060938",
+      "3408369895",
+      "142100540",
+      "4366138",
+      "3244654131",
+      "4366136",
+      "3255738904",
+      "27005597",
+      "3252271325",
+      "4366135",
+      "1336713858",
+      "1650700182",
+      "4366133"
+    ],
+    "alt_name": "Altstetter-Strasse",
+    "type": "way",
+    "id": "3995297",
+    "highway": "tertiary"
+  },
+  {
+    "maxspeed": "30",
+    "name": "Werdstrasse",
+    "created": {
+      "uid": "178186",
+      "changeset": "17792329",
+      "version": "4",
+      "user": "mdk",
+      "timestamp": "2013-09-12T00:33:21Z"
+    },
+    "refs": [
+      "25428548",
+      "2058311284",
+      "1106282554",
+      "2454845106",
+      "25429149"
+    ],
+    "type": "way",
+    "id": "4248833",
+    "highway": "residential"
+  },
+  {
+    "maxspeed": "30",
+    "name": "Salomon-Bleuler-Weg",
+    "created": {
+      "uid": "178186",
+      "changeset": "17711985",
+      "version": "5",
+      "user": "mdk",
+      "timestamp": "2013-09-07T01:08:11Z"
+    },
+    "refs": [
+      "25429934",
+      "1813891596",
+      "2431411086",
+      "25427172",
+      "2431411003",
+      "25426889",
+      "2431410967",
+      "2448818467",
+      "25428902",
+      "2448818101",
+      "25429811",
+      "81479121",
+      "1813891582",
+      "25427892",
+      "1813891584",
+      "2448818166",
+      "1813891580",
+      "1813891579",
+      "25429143",
+      "1813891587",
+      "25429610"
+    ],
+    "type": "way",
+    "id": "4248931",
+    "highway": "residential"
+  },
+  {
+    "maxspeed": "50",
+    "name": "Auwiesenstrasse",
+    "created": {
+      "uid": "214764",
+      "changeset": "39112034",
+      "version": "13",
+      "user": "Lirum Larum",
+      "timestamp": "2016-05-05T05:04:36Z"
+    },
+    "refs": [
+      "4166769551",
+      "667178229",
+      "25428236"
+    ],
+    "cycleway": "lane",
+    "type": "way",
+    "id": "4249051",
+    "highway": "secondary"
+  }
+]

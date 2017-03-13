@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="osmconvert 0.8.5" timestamp="2017-03-11T15:00:02Z">
+	<bounds minlat="47.225" minlon="8.275" maxlat="47.533" maxlon="8.8"/>
+	<way id="4072310" version="35" timestamp="2014-09-20T06:57:38Z" changeset="25553978" uid="35560" user="Peilscheibe">
+		<nd ref="17284541"/>
+		<nd ref="256031460"/>
+		<nd ref="1483901317"/>
+		<nd ref="1483901318"/>
+		<nd ref="256031461"/>
+		<tag k="lit" v="yes"/>
+		<tag k="ref" v="A1;A4"/>
+		<tag k="toll" v="yes"/>
+		<tag k="lanes" v="2"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="highway" v="motorway"/>
+		<tag k="int_ref" v="E 41;E 60"/>
+		<tag k="maxspeed" v="100"/>
+		<tag k="destination" v="Bern;Chur;Luzern;Flughafen;Nordring-Zürich"/>
+		<tag k="source:maxspeed" v="sign"/>
+		<tag k="destination:symbol" v="airport"/>
+	</way>
+	<way id="4072320" version="23" timestamp="2016-08-23T10:12:50Z" changeset="41634289" uid="1016290" user="Amaroussi">
+		<nd ref="453735"/>
+		<nd ref="92280667"/>
+		<tag k="lit" v="yes"/>
+		<tag k="ref" v="A1;A3"/>
+		<tag k="toll" v="yes"/>
+		<tag k="lanes" v="3"/>
+		<tag k="oneway" v="yes"/>
+		<tag k="highway" v="motorway"/>
+		<tag k="int_ref" v="E 60"/>
+		<tag k="maxspeed" v="80"/>
+		<tag k="destination" v="St. Gallen;Chur;Luzern"/>
+		<tag k="turn:lanes:forward" v="slight_left|slight_left|slight_right"/>
+	</way>
+	<way id="1027169" version="26" timestamp="2017-01-27T18:08:01Z" changeset="45569309" uid="2965963" user="Jonathan Masur">
+			<nd ref="249091984"/>
+			<nd ref="1264083863"/>
+			<nd ref="1247641714"/>
+			<nd ref="92206459"/>
+			<nd ref="1770708062"/>
+			<nd ref="1336695313"/>
+			<nd ref="4364058"/>
+			<tag k="bridge" v="yes"/>
+			<tag k="cycleway" v="track"/>
+			<tag k="elevated" v="+1"/>
+			<tag k="hazmat" v="no"/>
+			<tag k="hgv" v="no"/>
+			<tag k="highway" v="secondary"/>
+			<tag k="lanes" v="2"/>
+			<tag k="layer" v="1"/>
+			<tag k="maxspeed" v="50"/>
+			<tag k="maxweight" v="10"/>
+			<tag k="name" v="Europabrücke"/>
+			<tag k="oneway" v="yes"/>
+		</way>
+		<way id="1027757" version="13" timestamp="2017-02-03T19:32:14Z" changeset="45788171" uid="2110714" user="captain_slow">
+			<nd ref="4366143"/>
+			<nd ref="3253499536"/>
+			<nd ref="4366145"/>
+			<nd ref="3312069272"/>
+			<nd ref="2579962834"/>
+			<nd ref="352933785"/>
+			<nd ref="2737030226"/>
+			<nd ref="2579962854"/>
+			<nd ref="4660751003"/>
+			<nd ref="2579717439"/>
+			<nd ref="443798794"/>
+			<tag k="highway" v="residential"/>
+			<tag k="maxspeed" v="30"/>
+			<tag k="name" v="Lyrenweg"/>
+			<tag k="noexit" v="yes"/>
+			<tag k="sac_scale" v="hiking"/>
+		</way>
+		<way id="3847670" version="29" timestamp="2015-12-21T18:03:11Z" changeset="36091807" uid="2986880" user="reswert">
+			<nd ref="148883010"/>
+			<nd ref="1189293913"/>
+			<nd ref="257919694"/>
+			<tag k="ref" v="905"/>
+			<tag k="gauge" v="1435"/>
+			<tag k="usage" v="branch"/>
+			<tag k="tracks" v="1"/>
+			<tag k="cutting" v="yes"/>
+			<tag k="railway" v="rail"/>
+			<tag k="voltage" v="15000"/>
+			<tag k="maxspeed" v="125"/>
+			<tag k="operator" v="SBB"/>
+			<tag k="frequency" v="16.7"/>
+			<tag k="electrified" v="contact_line"/>
+		</way>
+		<way id="3847672" version="28" timestamp="2016-09-23T14:58:39Z" changeset="42376271" uid="481380" user="Nzara">
+			<nd ref="1231195444"/>
+			<nd ref="2208595582"/>
+			<nd ref="1231195402"/>
+			<nd ref="1231195308"/>
+			<nd ref="1231195399"/>
+			<nd ref="250720749"/>
+			<tag k="ref" v="4"/>
+			<tag k="gauge" v="1435"/>
+			<tag k="usage" v="branch"/>
+			<tag k="tracks" v="1"/>
+			<tag k="railway" v="rail"/>
+			<tag k="voltage" v="15000"/>
+			<tag k="maxspeed" v="80"/>
+			<tag k="operator" v="SBB"/>
+			<tag k="frequency" v="16.7"/>
+			<tag k="electrified" v="contact_line"/>
+		</way>
+		<way id="3995297" version="30" timestamp="2017-01-28T11:01:20Z" changeset="45588342" uid="2965963" user="Jonathan Masur">
+			<nd ref="4366142"/>
+			<nd ref="666297396"/>
+			<nd ref="3312069287"/>
+			<nd ref="666297386"/>
+			<nd ref="352933791"/>
+			<nd ref="3311936960"/>
+			<nd ref="27005559"/>
+			<nd ref="142093531"/>
+			<nd ref="4366140"/>
+			<nd ref="481443839"/>
+			<nd ref="4366139"/>
+			<nd ref="3256543708"/>
+			<nd ref="503707643"/>
+			<nd ref="3256543737"/>
+			<nd ref="3256543767"/>
+			<nd ref="481443840"/>
+			<nd ref="312335165"/>
+			<nd ref="481443850"/>
+			<nd ref="2305354548"/>
+			<nd ref="3950528649"/>
+			<nd ref="3406933530"/>
+			<nd ref="1336713902"/>
+			<nd ref="1388718951"/>
+			<nd ref="3259060938"/>
+			<nd ref="3408369895"/>
+			<nd ref="142100540"/>
+			<nd ref="4366138"/>
+			<nd ref="3244654131"/>
+			<nd ref="4366136"/>
+			<nd ref="3255738904"/>
+			<nd ref="27005597"/>
+			<nd ref="3252271325"/>
+			<nd ref="4366135"/>
+			<nd ref="1336713858"/>
+			<nd ref="1650700182"/>
+			<nd ref="4366133"/>
+			<tag k="alt_name" v="Altstetter-Strasse"/>
+			<tag k="highway" v="tertiary"/>
+			<tag k="maxspeed" v="50"/>
+			<tag k="name" v="Altstetterstrasse"/>
+		</way>
+		<way id="4248833" version="4" timestamp="2013-09-12T00:33:21Z" changeset="17792329" uid="178186" user="mdk">
+			<nd ref="25428548"/>
+			<nd ref="2058311284"/>
+			<nd ref="1106282554"/>
+			<nd ref="2454845106"/>
+			<nd ref="25429149"/>
+			<tag k="name" v="Werdstrasse"/>
+			<tag k="highway" v="residential"/>
+			<tag k="maxspeed" v="30"/>
+		</way>
+		<way id="4248931" version="5" timestamp="2013-09-07T01:08:11Z" changeset="17711985" uid="178186" user="mdk">
+			<nd ref="25429934"/>
+			<nd ref="1813891596"/>
+			<nd ref="2431411086"/>
+			<nd ref="25427172"/>
+			<nd ref="2431411003"/>
+			<nd ref="25426889"/>
+			<nd ref="2431410967"/>
+			<nd ref="2448818467"/>
+			<nd ref="25428902"/>
+			<nd ref="2448818101"/>
+			<nd ref="25429811"/>
+			<nd ref="81479121"/>
+			<nd ref="1813891582"/>
+			<nd ref="25427892"/>
+			<nd ref="1813891584"/>
+			<nd ref="2448818166"/>
+			<nd ref="1813891580"/>
+			<nd ref="1813891579"/>
+			<nd ref="25429143"/>
+			<nd ref="1813891587"/>
+			<nd ref="25429610"/>
+			<tag k="name" v="Salomon-Bleuler-Weg"/>
+			<tag k="highway" v="residential"/>
+			<tag k="maxspeed" v="30"/>
+		</way>
+		<way id="4249051" version="13" timestamp="2016-05-05T05:04:36Z" changeset="39112034" uid="214764" user="Lirum Larum">
+			<nd ref="4166769551"/>
+			<nd ref="667178229"/>
+			<nd ref="25428236"/>
+			<tag k="name" v="Auwiesenstrasse"/>
+			<tag k="highway" v="secondary"/>
+			<tag k="cycleway" v="lane"/>
+			<tag k="maxspeed" v="50"/>
+			<tag k="turn:lanes:backward" v="left|through"/>
+		</way>
+		<node id="453654" lat="47.4569627" lon="8.2756491" version="6" timestamp="2014-06-25T04:07:12Z" changeset="23134783" uid="1136962" user="stupot0041"/>
+		<node id="453657" lat="47.4579907" lon="8.2822799" version="6" timestamp="2014-05-30T15:53:20Z" changeset="22640865" uid="555807" user="Internethias"/>
+		<node id="453658" lat="47.4584322" lon="8.2854783" version="8" timestamp="2013-04-18T08:20:50Z" changeset="15770248" uid="227502" user="ajk"/>
+		<node id="453686" lat="47.4546294" lon="8.3273318" version="7" timestamp="2015-02-11T08:38:24Z" changeset="28767831" uid="92387" user="SimonPoole"/>
+		<node id="453687" lat="47.4546585" lon="8.3292809" version="5" timestamp="2015-02-11T08:38:24Z" changeset="28767831" uid="92387" user="SimonPoole"/>
+		<node id="453688" lat="47.4546396" lon="8.3297404" version="4" timestamp="2015-02-11T08:38:24Z" changeset="28767831" uid="92387" user="SimonPoole">
+		  <tag k="ele" v="380.338745117"/>
+		  <tag k="time" v="2006-01-15T07:35:12Z"/>
+		</node>
+		<node id="453689" lat="47.4545018" lon="8.3310323" version="5" timestamp="2015-02-11T08:38:24Z" changeset="28767831" uid="92387" user="SimonPoole"/>
+		<node id="453691" lat="47.454208" lon="8.3324786" version="5" timestamp="2015-02-11T08:38:24Z" changeset="28767831" uid="92387" user="SimonPoole"/>
+		<node id="453692" lat="47.4540939" lon="8.3328984" version="8" timestamp="2015-08-31T19:38:42Z" changeset="33712366" uid="92387" user="SimonPoole"/>
+		<node id="453694" lat="47.4536053" lon="8.3342633" version="7" timestamp="2015-02-11T08:38:20Z" changeset="28767831" uid="92387" user="SimonPoole">
+		  <tag k="ref" v="56"/>
+		  <tag k="name" v="Wettingen-Ost"/>
+		  <tag k="highway" v="motorway_junction"/>
+		</node>
+		<node id="453695" lat="47.4524946" lon="8.3361212" version="5" timestamp="2015-02-11T08:38:24Z" changeset="28767831" uid="92387" user="SimonPoole">
+		  <tag k="ele" v="393.31652832"/>
+		</node>
+		<node id="453696" lat="47.4517929" lon="8.3368914" version="6" timestamp="2015-02-11T08:38:24Z" changeset="28767831" uid="92387" user="SimonPoole"/>
+		<node id="453697" lat="47.4503709" lon="8.3380603" version="4" timestamp="2011-10-08T01:06:05Z" changeset="9498701" uid="7412" user="mjulius">
+		  <tag k="ele" v="393.797241211"/>
+		</node>
+		<node id="453698" lat="47.4486958" lon="8.3392753" version="5" timestamp="2011-11-17T00:42:58Z" changeset="9850200" uid="74900" user="FischersFritz"/>
+		<node id="453699" lat="47.4465294" lon="8.3408644" version="5" timestamp="2011-11-17T00:42:58Z" changeset="9850200" uid="74900" user="FischersFritz"/>
+		<node id="453700" lat="47.4443078" lon="8.3424779" version="5" timestamp="2011-11-17T00:42:58Z" changeset="9850200" uid="74900" user="FischersFritz"/>
+		<node id="453701" lat="47.4422613" lon="8.3439703" version="4" timestamp="2011-11-17T00:42:59Z" changeset="9850200" uid="74900" user="FischersFritz"/>
+		<node id="453702" lat="47.4396874" lon="8.3460741" version="8" timestamp="2015-01-17T10:48:38Z" changeset="28204793" uid="92387" user="SimonPoole"/>
+		<node id="453703" lat="47.4392282" lon="8.3465421" version="6" timestamp="2013-03-16T00:02:20Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453706" lat="47.4366472" lon="8.3502465" version="6" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453707" lat="47.4358418" lon="8.3519931" version="6" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453710" lat="47.4331035" lon="8.3584704" version="5" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453711" lat="47.4317925" lon="8.3609104" version="5" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453712" lat="47.4310916" lon="8.3622828" version="6" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453715" lat="47.4290997" lon="8.3674847" version="6" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453717" lat="47.4270935" lon="8.3731929" version="5" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453718" lat="47.4262528" lon="8.3755914" version="5" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453719" lat="47.4250933" lon="8.3789156" version="5" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453720" lat="47.4241276" lon="8.3818775" version="5" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453721" lat="47.4233892" lon="8.3846235" version="5" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453722" lat="47.4229282" lon="8.3869145" version="5" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453723" lat="47.4225821" lon="8.3893381" version="6" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453725" lat="47.4220954" lon="8.3960764" version="6" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453726" lat="47.4219055" lon="8.3985377" version="7" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453727" lat="47.4213671" lon="8.4027842" version="7" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453728" lat="47.4211434" lon="8.4039918" version="7" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453729" lat="47.420556" lon="8.4066387" version="7" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453730" lat="47.4197586" lon="8.4094708" version="7" timestamp="2013-03-15T23:55:53Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453731" lat="47.41901" lon="8.4116454" version="6" timestamp="2013-03-15T23:55:54Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453733" lat="47.4166638" lon="8.4169577" version="8" timestamp="2014-10-22T22:22:08Z" changeset="26266939" uid="7412" user="mjulius"/>
+		<node id="453734" lat="47.4156191" lon="8.4190819" version="9" timestamp="2016-08-23T10:13:03Z" changeset="41634289" uid="1016290" user="Amaroussi"/>
+		<node id="453735" lat="47.4138194" lon="8.4227843" version="9" timestamp="2014-10-22T22:22:07Z" changeset="26266939" uid="7412" user="mjulius">
+		  <tag k="ref" v="59"/>
+		  <tag k="name" v="Limmattaler Kreuz"/>
+		  <tag k="highway" v="motorway_junction"/>
+		</node>
+		<node id="453736" lat="47.4128869" lon="8.4250238" version="5" timestamp="2011-10-08T14:59:22Z" changeset="9503354" uid="7412" user="mjulius"/>
+		<node id="453737" lat="47.4118967" lon="8.427693" version="7" timestamp="2014-10-22T21:47:44Z" changeset="26266939" uid="7412" user="mjulius"/>
+		<node id="453738" lat="47.4111279" lon="8.4304225" version="7" timestamp="2014-10-22T21:47:44Z" changeset="26266939" uid="7412" user="mjulius"/>
+		<node id="453740" lat="47.4105225" lon="8.4335266" version="11" timestamp="2014-10-22T21:47:44Z" changeset="26266939" uid="7412" user="mjulius"/>
+		<node id="453741" lat="47.4101583" lon="8.4382415" version="7" timestamp="2013-03-15T23:55:54Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453742" lat="47.4101929" lon="8.4404985" version="5" timestamp="2013-03-15T23:55:54Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453743" lat="47.4103067" lon="8.4431391" version="3" timestamp="2013-03-15T23:55:54Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453744" lat="47.4103648" lon="8.4446525" version="3" timestamp="2013-03-15T23:55:54Z" changeset="15379224" uid="74900" user="FischersFritz"/>
+		<node id="453745" lat="47.4103726" lon="8.4464212" version="3" timestamp="2010-11-15T13:35:31Z" changeset="6377436" uid="186651" user="Teddych">
+		  <tag k="ele" v="392.35534668"/>
+		</node>
+		<relation id="2807069" version="32" timestamp="2015-11-21T18:01:01Z" changeset="35493231" uid="835140" user="nounours77">
+		    <member type="node" ref="153479647" role="stop"/>
+		    <member type="node" ref="2640649206" role="stop"/>
+		    <member type="node" ref="28887272" role="stop"/>
+		    <member type="node" ref="94583655" role="stop"/>
+		    <member type="node" ref="253208940" role="stop"/>
+		    <member type="node" ref="48932817" role="stop"/>
+		    <member type="node" ref="235529623" role="stop"/>
+		    <member type="node" ref="235521050" role="stop"/>
+		    <member type="node" ref="47775233" role="stop"/>
+		    <member type="node" ref="140425855" role="stop"/>
+		    <member type="node" ref="319291435" role="stop"/>
+		    <member type="node" ref="1044085700" role="stop"/>
+		    <member type="node" ref="4366159" role="stop"/>
+		    <member type="node" ref="3320816052" role="stop"/>
+		    <member type="node" ref="30000239" role="stop"/>
+		    <member type="way" ref="208812258" role=""/>
+		    <member type="way" ref="144553810" role=""/>
+		    <member type="way" ref="28127777" role=""/>
+		    <member type="way" ref="10678559" role=""/>
+		    <member type="way" ref="27410058" role=""/>
+		    <member type="way" ref="27410059" role=""/>
+		    <member type="way" ref="28127891" role=""/>
+		    <member type="way" ref="217403560" role=""/>
+		    <member type="way" ref="371347525" role=""/>
+		    <member type="way" ref="140717780" role=""/>
+		    <member type="way" ref="217403564" role=""/>
+		    <member type="way" ref="374532889" role=""/>
+		    <member type="way" ref="4575016" role=""/>
+		    <member type="way" ref="218316340" role=""/>
+		    <member type="way" ref="217199856" role=""/>
+		    <member type="way" ref="217447883" role=""/>
+		    <member type="way" ref="217447888" role=""/>
+		    <member type="way" ref="217447877" role=""/>
+		    <member type="way" ref="218316356" role=""/>
+		    <member type="way" ref="218320628" role=""/>
+		    <member type="way" ref="218455032" role=""/>
+		    <member type="way" ref="218455030" role=""/>
+		    <member type="node" ref="2275723458" role=""/>
+		    <member type="node" ref="2275787449" role=""/>
+		    <member type="node" ref="2275787478" role=""/>
+		    <member type="way" ref="218455028" role=""/>
+		    <member type="node" ref="2277024836" role=""/>
+		    <member type="way" ref="218455041" role=""/>
+		    <member type="node" ref="2277024797" role=""/>
+		    <member type="way" ref="218455033" role=""/>
+		    <member type="node" ref="2277024777" role=""/>
+		    <member type="way" ref="218455045" role=""/>
+		    <member type="way" ref="218455480" role=""/>
+		    <member type="way" ref="218455481" role=""/>
+		    <member type="node" ref="2277144228" role=""/>
+		    <member type="way" ref="218467051" role=""/>
+		    <member type="node" ref="2277144218" role=""/>
+		    <member type="way" ref="218467053" role=""/>
+		    <member type="node" ref="2277144140" role=""/>
+		    <member type="way" ref="220638933" role=""/>
+		    <member type="way" ref="218931360" role=""/>
+		    <member type="node" ref="253197081" role=""/>
+		    <member type="node" ref="2281357403" role=""/>
+		    <member type="way" ref="218937800" role=""/>
+		    <member type="way" ref="218931365" role=""/>
+		    <member type="node" ref="2281357435" role=""/>
+		    <member type="way" ref="218937803" role=""/>
+		    <member type="node" ref="26823632" role=""/>
+		    <member type="node" ref="2296971361" role=""/>
+		    <member type="way" ref="220593833" role=""/>
+		    <member type="node" ref="2297304033" role=""/>
+		    <member type="way" ref="182560839" role=""/>
+		    <member type="node" ref="891864924" role=""/>
+		    <member type="node" ref="2297325500" role=""/>
+		    <member type="node" ref="2309435426" role=""/>
+		    <member type="node" ref="2264836195" role="stop"/>
+		    <member type="node" ref="3482369645" role="stop"/>
+		    <tag k="to" v="Albisrieden"/>
+		    <tag k="ref" v="3"/>
+		    <tag k="from" v="Klusplatz"/>
+		    <tag k="name" v="Tram 3: Klusplatz —&#62; Albisrieden"/>
+		    <tag k="type" v="route"/>
+		    <tag k="route" v="tram"/>
+		    <tag k="colour" v="#00923c"/>
+		    <tag k="network" v="ZVV"/>
+		    <tag k="operator" v="VBZ"/>
+		    <tag k="wheelchair" v="limited"/>
+		    <tag k="wheelchair:description" v="rund 50% der Fahrzeuge verkehren mit Niederflur-Einstieg"/>
+		  </relation>
+		  <relation id="7063663" version="1" timestamp="2017-03-11T13:28:03Z" changeset="46762505" uid="38804" user="Victor Bielawski">
+		    <member type="node" ref="4729139771" role="stop"/>
+		    <member type="way" ref="479876778" role="platform"/>
+		    <member type="node" ref="4729139770" role="stop"/>
+		    <member type="way" ref="479876775" role="platform"/>
+		    <tag k="name" v="Thalwil, Sonnenberg"/>
+		    <tag k="network" v="ZVV"/>
+		    <tag k="public_transport" v="stop_area"/>
+		    <tag k="type" v="public_transport"/>
+		    <tag k="uic_name" v="Thalwil, Sonnenberg"/>
+		  </relation>
+		<relation id="7014859" version="2" timestamp="2017-02-27T09:29:17Z" changeset="46436761" uid="465052" user="hecktor">
+		  <member type="way" ref="477445213" role="outer"/>
+		  <tag k="landuse" v="farmyard"/>
+		  <tag k="type" v="multipolygon"/>
+		</relation>
+		<relation id="7002984" version="1" timestamp="2017-02-22T19:02:59Z" changeset="46316083" uid="481380" user="Nzara">
+		  <member type="way" ref="158608437" role="outer"/>
+		  <member type="way" ref="476381804" role="outer"/>
+		  <tag k="addr:city" v="Bülach"/>
+		  <tag k="addr:housenumber" v="24"/>
+		  <tag k="addr:street" v="Spitalstrasse"/>
+		  <tag k="amenity" v="hospital"/>
+		  <tag k="emergency" v="yes"/>
+		  <tag k="name" v="Spital Bülach"/>
+		  <tag k="type" v="multipolygon"/>
+		  <tag k="wheelchair" v="yes"/>
+		</relation>
+		<relation id="7002989" version="1" timestamp="2017-02-22T19:06:54Z" changeset="46316197" uid="481380" user="Nzara">
+		  <member type="way" ref="476382698" role="outer"/>
+		  <member type="way" ref="476382697" role="outer"/>
+		  <tag k="landuse" v="allotments"/>
+		  <tag k="type" v="multipolygon"/>
+		</relation>
+		<relation id="7004207" version="1" timestamp="2017-02-23T09:52:06Z" changeset="46332377" uid="2110714" user="captain_slow">
+		  <member type="way" ref="41266876" role="from"/>
+		  <member type="node" ref="365839514" role="via"/>
+		  <member type="way" ref="476580917" role="to"/>
+		  <tag k="restriction" v="only_straight_on"/>
+		  <tag k="type" v="restriction"/>
+		</relation>
+</osm>
