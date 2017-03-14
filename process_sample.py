@@ -1,4 +1,4 @@
-## note, this code is from Udacity. Hand-picked sample is at `zurich_osm_extract.osm`
+## this code is from Udacity. Hand-picked sample is at `zurich_osm_extract.osm`
 
 import xml.etree.ElementTree as ET  # Use cElementTree or lxml if too slow
 

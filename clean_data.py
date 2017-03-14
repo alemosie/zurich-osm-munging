@@ -14,14 +14,8 @@ import fuzzywuzzy
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 
-# Per http://wiki.openstreetmap.org/wiki/OSM_XML#Contents, only three types of root tags: node, way, relation
-"""
-Analyses:
-    - How many elements changed per changeset
 
-"""
-
-FULL_PATH = "zurich_switzerland.osm"
+FULL_PATH = "data/zurich_switzerland.osm"
 EXTRACT_PATH = "extracts/zurich_osm_extract.osm"
 
 class ProcessParentTag():
@@ -41,7 +35,7 @@ class ProcessParentTag():
 
 
 class ProcessChildren():
-    # does not assume that the element has children before processing
+    # note: does not assume that the element has children before processing
     def __init__(self, element):
         self.children = element.getchildren()
         self.document = self.create_full_document()
@@ -102,12 +96,14 @@ class ProcessChildren():
 
 
     def sanitize_base_values(self, attrs):
+        """Rid attribute dictionary of "base_value" keys where unnecessary"""
         for attr in attrs:
             if attrs[attr].keys() == ["base_value"]:
                 attrs[attr] = attrs[attr]["base_value"]
         return attrs
 
     def sanitize_list_values(self, value):
+        """Split multi-value strings into lists for MongoDB to handle"""
         if ";" in value or "|" in value:
             return re.split(";|\|", value)
         else:
@@ -136,6 +132,7 @@ class ProcessChildren():
                 # doing it this way to preserve order of relations
                 child = child.attrib
                 if child["role"] == "stop":
+                    # rid "node" reference for stop roles, since stops are always nodes
                     processed_members.append({"stop": child["ref"]})
                 else:
                     processed_members.append({child["type"]: child["ref"]})
@@ -160,6 +157,7 @@ class ParseOSM(object):
 
 
     def parse_tag_types(self):
+        """Partition all tags from root by type"""
         with codecs.open(self.file, "r") as raw_osm:
             tree = ET.parse(raw_osm)
             root = tree.getroot()

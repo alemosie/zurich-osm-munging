@@ -1,9 +1,12 @@
 from pymongo import MongoClient
 import json
 
+"""
+Insert sanitized OSM data in JSON format into MongoDB
+"""
 
 def insert_data(filename, db):
-    # to connect to the shell:
+    # first: to connect to the db/shell:
         # => mongod --dbpath ~/mongodb/data/db/
         # => mongo
         # => help
@@ -13,26 +16,7 @@ def insert_data(filename, db):
         db.just_zurich.insert_many(data)
         print db.just_zurich.find_one()
 
-# number of chosen type of nodes, like cafes, shops etc.
-
-def print_pipeline():
-    filter_nulls = {"$match": {"name": {"$exists": 1}}}
-    group_names = {"$group": {
-                        "_id": "$name",
-                        "count": {"$sum": 1}
-                    }
-                }
-    sort = {"$sort": {"count": -1}}
-    limit = {"$limit": 1}
-    pipeline = [filter_nulls, group_names, sort, limit]
-
-
 if __name__ == "__main__":
     client = MongoClient("mongodb://localhost:27017")
     db = client.osm
     insert_data('data/just_zurich.json', db)
-
-# > db.zurich.count()
-# 6084959
-# > db.zurich.distinct("created.user").length
-# 2644

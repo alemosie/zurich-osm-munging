@@ -2,6 +2,18 @@
 
 Note: complete data files (both source `.osm` and sanitized `.json`) have been added to .gitignore to prevent slowness and bloating on GitHub. Sample source and sanitized data can be found in the `extracts` folder of this repository.
 
+## Repository contents
+
+Folder/file | Description
+--- | ---
+`Extracts/` | contains osm and json sample data
+`Images/` | contains images used in this README
+`clean_data.py` | master file for OSM XML sanitization
+`insert_data.py` | master file for inserting sanitized json data into
+`process_sample.py` | generate `zurich_largerz_extract.osm` for sanitization testing
+`user_viz.py` | generate donut chart to visualize top user activity
+`zurich_cities.py` | strategy file for auditing cities in the data
+
 ## Source data
 
 <img src="images/zurich_map.png" width="300">
