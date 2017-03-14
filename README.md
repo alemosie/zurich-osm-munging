@@ -36,7 +36,7 @@ Top 20 matches to Zurich:
 OSM records level of specificity in the key values in tags. In the json conversion process, it made the most sense to nest these attributes together, but the approach had to differ based on the tag. For the purposes of this exercise, I only processed two-tiered keys (one separator), and disregarded three-tiered keys.
 
 Two-tier key types & conversions:
-```
+```xml
 <tag k="addr:street" v="Bülach" />
 <tag k="addr:street" v="Spitalstrasse" />
 
@@ -46,7 +46,7 @@ Two-tier key types & conversions:
   "street": "Spitalstrasse"
 }
 ```
-```
+```xml
 <tag k="wheelchair" v="limited"/>
 <tag k="wheelchair:description" v="rund 50% der Fahrzeuge verkehren mit Niederflur-Einstieg"/>
 
@@ -56,7 +56,7 @@ Two-tier key types & conversions:
   "base_value": "limited"
 }
 ```
-```
+```xml
 <tag k="maxspeed" v="100"/>
 <tag k="source:maxspeed" v="sign"/>
 
@@ -117,20 +117,34 @@ Relations | 134 | `db.just_zurich.find({"type":"relation"}).count()`
 
 #### Users
 
-**Unique users**
+##### Unique users
 
 \> `db.just_zurich.distinct("created.uid").length`
 
-```
+```javascript
 2642
 ```
 
+##### Top user
 
-db.just_zurich.aggregate([
-  {"$match": {$and: [{"addr.city": {"$exists": 1}}, {"amenity": {"$exists": 1}}]}},
-  {$group: {_id: "$amenity",count:{$sum:1}}},
-  {"$sort": {"count": -1}},
-  {"$limit": 5}])`
+\> ` db.just_zurich.aggregate([{$group: {_id:{"user": "$created.user","uid": "$created.uid"},count:{$sum:1}}},{"$sort": {"count": -1}},{"$limit": 1}])`
+
+```javascript
+{ "_id" : { "user" : "mdk", "uid" : "178186" },
+  "count" : 566235 }
+```
+
+##### Top five users vs the rest
+
+```javascript
+{ "_id" : { "user" : "mdk", "uid" : "178186" }, "count" : 566235 }
+{ "_id" : { "user" : "SimonPoole", "uid" : "92387" }, "count" : 334879 }
+{ "_id" : { "user" : "Sarob", "uid" : "1218134" }, "count" : 146217 }
+{ "_id" : { "user" : "hecktor", "uid" : "465052" }, "count" : 117316 }
+{ "_id" : { "user" : "feuerstein", "uid" : "194843" }, "count" : 102162 }
+```
+
+<img src="images/users.png" width="400">
 
 
 #### Dates
@@ -147,12 +161,12 @@ For the purposes of this exercise, I'm only considering tags that explicitly lis
 ##### Number of records
 \> `db.just_zurich.aggregate([{"$match": {"addr.city": {"$exists": 1}}}, {$group:{_id:null,count:{$sum:1}}}])`
 
-```
+```javscript
 22849
 ```
 
 
-###### What are the top 5 amenities?
+##### What are the top 5 amenities?
 
 \> `db.just_zurich.aggregate([
   {"$match": {$and: [{"addr.city": {"$exists": 1}}, {"amenity": {"$exists": 1}}]}},
@@ -160,14 +174,14 @@ For the purposes of this exercise, I'm only considering tags that explicitly lis
   {"$sort": {"count": -1}},
   {"$limit": 5}])`
 
-```
+```javascript
 { "_id" : "restaurant", "count" : 327 }
 { "_id" : "car_sharing", "count" : 212 }
 { "_id" : "school", "count" : 67 }
 { "_id" : "place_of_worship", "count" : 64 }
 { "_id" : "cafe", "count" : 52 }
 ```
-###### Which postcodes have the most diverse cuisine?
+##### Which postcodes have the most diverse cuisine?
 
 \> `db.just_zurich.aggregate([
   {"$match":{$and: [{"addr.city": {"$exists": 1}},{"amenity":"restaurant"}]}},
@@ -178,7 +192,7 @@ For the purposes of this exercise, I'm only considering tags that explicitly lis
   {"$sort": {num_cuisines: -1}},
   {"$limit": 5}])`
 
-```
+```javascript
 { "_id" : "8004", "cuisines" :
   [ "international", "chinese", "tapas", "lebanese", "italian", "indian", "kebab", "spanish", "kosher", "coffee_shop", "tea", "burger", "cake", "regional", "vegan", "japanese", "american", "Bier, Bar", "vegetarian", "asian", "vietnamese" ],
   "num_cuisines" : 22 }
@@ -199,6 +213,8 @@ For the purposes of this exercise, I'm only considering tags that explicitly lis
   "num_cuisines" : 10 }
 ```
 
+Note: the double "unwind" was necessary to extract values from restaurants that had more than one associated cuisine.
+
 ## Looking ahead
 
 "created" : {
@@ -218,3 +234,4 @@ For the purposes of this exercise, I'm only considering tags that explicitly lis
 - [Permutations for "street" in German](http://www.acronymfinder.com/Stra%C3%9Fe-\(German%3A-Street\)-\(STR\).html)
 - [District validator](https://www.inyourpocket.com/zurich/Zurichs-districts_71823f?&page=2)
 - [Fuzzywuzzy](https://pypi.python.org/pypi/fuzzywuzzy)  string match
+- [Donut chart](http://stackoverflow.com/questions/36296101/donut-chart-python)
