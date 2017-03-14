@@ -41,7 +41,7 @@ Because of special characters in German (e.g. umlaut), I needed to familiarize m
 
 Because of the umlaut in Zürich and the presence of city/district modifiers, the city names needed to be audited.
 
-Using the fuzzywuzzy string approximation library, here are the top 20 fuzzy matches to Zurich before sanitization. Within each tuple, the string represents the "addr:city" value, and the integer its match ratio: how good of a match it is to the root term, "Zurich"
+Using the fuzzywuzzy string approximation library, here are the top 20 fuzzy matches to Zurich before sanitization. Within each tuple, the string represents the "addr:city" value, and the integer its match ratio: how good of a match it is to the root term, "Zurich."
 
 ```python
 [('Zurich', 100), ('Zuerich', 92), ('zuerich', 92), ('Zürich', 91), ('zürich', 91), ('Egg bei Zürich', 82), ('Zürich-Flughafen', 78), ('Zürich 50 Oerlikon', 78), ('Zürich-Altstetten', 78), ('Zürich Gockhausen', 78), ('Muri', 68), ('Höri', 60), ('Forch', 55), ('Buchs', 55), ('Embrach', 46), ('Zumikon', 46), ('Zufikon', 46), ('Neerach', 46), ('Uerikon', 46), ('Seuzach', 46)]
@@ -156,9 +156,20 @@ Newest record | "2017-03-11T13:48:07Z" | `db.just_zurich.find().sort({"created.t
 2642
 ```
 
+Note: "created.user" is not a viable field for uniqueness in this dataset -- four usernames share the same id:
+
+\> `db.just_zurich.aggregate([{$group: {_id: {uid:"$created.uid"}, users: {$addToSet: "$created.user"}}}, {$project: {_id: 1,users: 1,num_users: { $size: "$users" }}}, {$match: {num_users: {$gt: 1}}}])
+
+```javascript
+{ "_id" : { "uid" : "5351349" }, "users" : [ "Jan:", "Jan Huber" ], "num_users" : 2 }
+
+{ "_id" : { "uid" : "5007203" }, "users" : [ "someone12345678", "ManuDroid94" ], "num_users" : 2 }
+```
+
+
 ##### Top user
 
-\> ` db.just_zurich.aggregate([{$group: {_id:{"user": "$created.user","uid": "$created.uid"},count:{$sum:1}}},{"$sort": {"count": -1}},{"$limit": 1}])`
+\> `db.just_zurich.aggregate([{$group: {_id:{"user": "$created.user","uid": "$created.uid"},count:{$sum:1}}},{"$sort": {"count": -1}},{"$limit": 1}])`
 
 ```javascript
 { "_id" : { "user" : "mdk", "uid" : "178186" },
@@ -286,7 +297,7 @@ Dataset | Count | Query
 Filtered | 3146959 | `db.just_zurich.count()`
 Unfiltered | 6084959 | `db.all_zurich.count()`
 
-Despite culling around 3 million records, I don't do any checks for location other than "addr:city". In the future, I may consider using records' `lat` and `lon` keys to determine whether a document falls within what I consider to be the city boundaries.
+Despite culling around 3 million records, I don't do any checks for location other than "addr:city". In the future, I may consider using records' `lat` and `lon` keys to determine whether a document falls within what I consider to be the city boundaries. However, I anticipate that this approach would be computationally intensive, especially over 6 million records.
 
 ## Resources
 
