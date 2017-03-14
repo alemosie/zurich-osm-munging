@@ -252,24 +252,15 @@ For the purposes of this exercise, I'm only considering tags that explicitly lis
 
 
 ```javascript
-{ "_id" : "8004", "cuisines" :
-  [ "international", "chinese", "tapas", "lebanese", "italian", "indian", "kebab", "spanish", "kosher", "coffee_shop", "tea", "burger", "cake", "regional", "vegan", "japanese", "american", "Bier, Bar", "vegetarian", "asian", "vietnamese" ],
-  "num_cuisines" : 22 }
-
-{ "_id" : "8005", "cuisines" :
-  [ "american", "vegetarian", "asian", "italian", "pizza", "thai", "international", "regional", "indian", "turkish", "burger", "greek", "lebanese" ], "num_cuisines" : 13 }
-
-{ "_id" : "8001", "cuisines" :
-  [ "pizza", "italian", "asian", "bistro", "indian", "brazilian", "spanish", "fish", "regional", "thai", "greek", "sushi", "japanese" ],
+{ "_id" : "8004",
+  "cuisines" : [ "american", "vegetarian", "Bier, Bar", "japanese", "vietnamese", "international", "tea", "asian", "spanish", "kebab", "indian", "italian", "kosher", "coffee_shop", "lebanese", "cake", "burger", "regional", "vegan", "tapas", "chinese" ],
+  "num_cuisines" : 21 }
+{ "_id" : "8001",
+  "cuisines" : [ "thai", "greek", "japanese", "sushi", "brazilian", "fish", "spanish", "indian", "asian", "bistro", "regional", "italian", "pizza" ],
   "num_cuisines" : 13 }
-
-{ "_id" : "8006", "cuisines" :
-  [ "pizza", "asian", "swiss", "indian", "coffee_shop", "italian", "lebanese", "African", "thai", "international" ],
-  "num_cuisines" : 10 }
-
-{ "_id" : "8050", "cuisines" :
-  [ "regional", "thai", "kebab", "indian", "italian", "steak_house", "japanese", "asian", "Schnitzel", "bagels" ],
-  "num_cuisines" : 10 }
+{ "_id" : "8005",
+  "cuisines" : [ "burger", "greek", "turkish", "indian", "lebanese", "pizza", "italian", "regional", "international", "thai", "asian", "vegetarian", "american" ],
+  "num_cuisines" : 13 }
 ```
 
 
