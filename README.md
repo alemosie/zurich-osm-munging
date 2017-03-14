@@ -1,6 +1,33 @@
 # Wrangle OpenStreetMap Data: Zurich, Switzerland
 
-Note: complete data files (both source `.osm` and sanitized `.json`) have been added to .gitignore to prevent slowness and bloating on GitHub. Sample source and sanitized data can be found in the `extracts` folder of this repository.
+Project 3, Udacity Data Analyst Nanodegree
+
+Contents:
+- [Repository contents](## Repository contents)
+- [Source data](## Source data)
+  - [Parsing challenges](### XML parsing challenges)
+  - [Domain/language knowledge](#### Domain & language knowledge)
+  - [City names](#### City names)
+  - [Tag key separators](#### Tag key separators)
+  - [Tag value separators](#### Tag value separators)
+- [Data overview](## Data overview)
+  - [File attributes](### File attributes)
+  - [Counts](### Counts)
+  - [Dates](#### Dates)
+  - [Users](#### Users)
+    - [Unique users](##### Unique users)
+    - [Top user](##### Top user)
+    - [Top 5 user activity](##### Top five users vs the rest)
+- [Zurich exploration](## Zurich exploration)
+  - [Number of city-only records](#### Number of records)
+  - [Top 5 amenities](#### What are the top 5 amenities?)
+  - [Most popular cuisine by postcode](#### Which areas of the city have the most diverse cuisine?)
+- [Looking ahead](## Looking ahead)
+  - [Payments](### Payments)
+  - [Limits of Zurich-only filter](### Limits of "addr:city")
+- [Resources](## Resources)
+
+
 
 ## Repository contents
 
@@ -13,6 +40,8 @@ Folder/file | Description
 `process_sample.py` | generate `zurich_largerz_extract.osm` for sanitization testing
 `user_viz.py` | generate donut chart to visualize top user activity
 `zurich_cities.py` | strategy file for auditing cities in the data
+
+*Note: complete data files (both source `.osm` and sanitized `.json`) have been added to .gitignore to prevent slowness and bloating on GitHub.*
 
 ## Source data
 
@@ -130,9 +159,9 @@ File | Type | Size
 `just_zurich.json` | Sanitized | 702.2 MB
 
 
-### Data counts
+### Counts
 
- | Count | Query
+Type | Count | Query
 --- | --- | ---
 All | 3146959 | `db.just_zurich.count()`
 Nodes | 2706650 | `db.just_zurich.find({"type":"node"}).count()`
@@ -190,18 +219,18 @@ Newest record | "2017-03-11T13:48:07Z" | `db.just_zurich.find().sort({"created.t
 <img src="images/users.png" width="400">
 
 
-### Zurich exploration
+## Zurich exploration
 
 For the purposes of this exercise, I'm only considering tags that explicitly list Zurich as a city as within Zurich.
 
-##### Number of records
+#### Number of records
 \> `db.just_zurich.aggregate([{"$match": {"addr.city": {"$exists": 1}}}, {$group:{_id:null,count:{$sum:1}}}])`
 
 ```javscript
 22849
 ```
 
-##### What are the top 5 amenities?
+#### What are the top 5 amenities?
 
 \> `db.just_zurich.aggregate([
   {"$match": {$and: [{"addr.city": {"$exists": 1}}, {"amenity": {"$exists": 1}}]}},
@@ -216,7 +245,7 @@ For the purposes of this exercise, I'm only considering tags that explicitly lis
 { "_id" : "place_of_worship", "count" : 64 }
 { "_id" : "cafe", "count" : 52 }
 ```
-##### Which areas of the city (by postcode) have the most diverse cuisine?
+#### Which areas of the city have the most diverse cuisine?
 
 \> `db.just_zurich.aggregate([
   {$match:{$and: [{"addr.city": {"$exists": 1}},{"amenity":"restaurant"}]}},
@@ -249,7 +278,7 @@ For the purposes of this exercise, I'm only considering tags that explicitly lis
   "num_cuisines" : 10 }
 ```
 
-Note: the double "unwind" was necessary to extract values from restaurants that had more than one associated cuisine.
+*Note: the double "unwind" was necessary to extract values from restaurants that had more than one associated cuisine.*
 
 
 ## Looking ahead
