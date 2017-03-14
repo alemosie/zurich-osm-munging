@@ -153,8 +153,8 @@ Relations | 134 | `db.just_zurich.find({"type":"relation"}).count()`
 
 | Result | Query
 --- | --- | ---
-Earliest record | |
-Latest record ||
+Earliest record | "2006-05-05T16:19:04Z" | `db.just_zurich.find().sort({"created.timestamp": 1}).limit(1)`
+Latest record | "2017-03-11T13:48:07Z" | `db.just_zurich.find().sort({"created.timestamp": -1}).limit(1)`
 
 ### Zurich exploration
 
@@ -257,7 +257,7 @@ My method for extracting Zurich-only data needs improvement. At the moment, the 
 
 I loaded a non-filtered version of the dataset into MongoDB, and compared the counts of both collections:
 
-| Count | Query
+Dataset | Count | Query
 --- | --- | ---
 Filtered | 3146959 | `db.just_zurich.count()`
 Unfiltered | 6084959 | `db.all_zurich.count()`
