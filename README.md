@@ -6,7 +6,7 @@ Note: complete data files (both source `.osm` and sanitized `.json`) have been a
 
 <img src="images/zurich_map.png" width="300">
 
-The OpenStreetMap (OSM) extract for Zurich, Switzerland contains covers the city center and surrounding suburbs, and contains data on establishments, transportation systems, points of interest and more for the area. The **[OSM XML dataset from MapZen](https://mapzen.com/data/metro-extracts/metro/zurich_switzerland/) is 614.7 MB**.
+The OpenStreetMap (OSM) extract for Zurich, Switzerland covers the city center and surrounding suburbs, and contains data on establishments, transportation systems, points of interest, and more for the area. The **[OSM XML dataset from MapZen](https://mapzen.com/data/metro-extracts/metro/zurich_switzerland/) is 614.7 MB**.
 
 In accordance with the OSM XML API, the data consists of three main types of elements:
 
@@ -20,16 +20,25 @@ In the sanitization process, all three types of elements are accounted for.
 
 #### Domain & language knowledge
 
-I chose to parse Zurich data because of an interest in the city, not a personal connection. Having never visited or lived the city and not knowing German, I was initially lacking knowledge to audit tag values.
+I chose to parse Zurich data because of an interest in the city, not a personal connection. Having never visited or lived in Zurich and not knowing German, I was initially lacking knowledge to audit tag values.
 
 Because of special characters in German (e.g. umlaut), I needed to familiarize myself with [Python's handling of unicode](https://docs.python.org/2/howto/unicode.html).
 
 
 #### City names
 
-Top 20 matches to Zurich:
+Because of the umlaut in Zürich and the presence of city/district modifiers, the city names needed to be audited.
 
+Using the fuzzywuzzy string approximation library, here are the top 20 fuzzy matches to Zurich before sanitization. Within each tuple, the string represents the "addr:city" value, and the integer its match ratio: how good of a match it is to the root term, "Zurich"
+
+```python
 [('Zurich', 100), ('Zuerich', 92), ('zuerich', 92), ('Zürich', 91), ('zürich', 91), ('Egg bei Zürich', 82), ('Zürich-Flughafen', 78), ('Zürich 50 Oerlikon', 78), ('Zürich-Altstetten', 78), ('Zürich Gockhausen', 78), ('Muri', 68), ('Höri', 60), ('Forch', 55), ('Buchs', 55), ('Embrach', 46), ('Zumikon', 46), ('Zufikon', 46), ('Neerach', 46), ('Uerikon', 46), ('Seuzach', 46)]
+```
+
+Any city value with a score below 78 does not contain Zurich. Thus, to filter down to only Zurich (or city-unspecified) records, I used that ratio cutoff to cull documents that do not directly reference Zurich in "addr:city".
+
+To add complexity, the dataset's "addr:city" values contained a handful of integers. These integers represent Zurich's districts, which are often [referenced by number](https://en.wikipedia.org/wiki/Subdivisions_of_Z%C3%BCrich). To standardize city names and keep only Zurich records, I decided to convert any integers I saw in the "addr:city" field into "Zurich".
+
 
 #### Tag key separators
 
@@ -96,7 +105,10 @@ Searches for `"Salomon-Bleuler-Weg"` on [other maps](https://www.google.com/maps
 
 ## Data overview
 
-Data filtered down to just Zurich.
+Note: the data is filtered down to Zurich proper, meeting the following conditions:
+  - City name approximately "Zurich"
+  - An integer representing a Zurich district number
+  - No explicit city mentioned (i.e. no "addr:city" field in the document)
 
 ### File attributes
 
@@ -114,6 +126,13 @@ All | 3146959 | `db.just_zurich.count()`
 Nodes | 2706650 | `db.just_zurich.find({"type":"node"}).count()`
 Ways  | 432670| `db.just_zurich.find({"type":"way"}).count()`
 Relations | 134 | `db.just_zurich.find({"type":"relation"}).count()`
+
+#### Dates
+
+Type | Result | Query
+--- | --- | ---
+Oldest record | "2006-05-05T16:19:04Z" | `db.just_zurich.find().sort({"created.timestamp": 1}).limit(1)`
+Newest record | "2017-03-11T13:48:07Z" | `db.just_zurich.find().sort({"created.timestamp": -1}).limit(1)`
 
 #### Users
 
@@ -148,13 +167,6 @@ Relations | 134 | `db.just_zurich.find({"type":"relation"}).count()`
 
 <img src="images/users.png" width="400">
 
-
-#### Dates
-
-Type | Result | Query
---- | --- | ---
-Oldest record | "2006-05-05T16:19:04Z" | `db.just_zurich.find().sort({"created.timestamp": 1}).limit(1)`
-Newest record | "2017-03-11T13:48:07Z" | `db.just_zurich.find().sort({"created.timestamp": -1}).limit(1)`
 
 ### Zurich exploration
 
