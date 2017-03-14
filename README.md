@@ -3,8 +3,8 @@
 Project 3, Udacity Data Analyst Nanodegree
 
 Contents:
-- [Repository contents](##repository-contents)
-- [Source data](##source-data)
+- [Repository contents](#repository-contents)
+- [Source data](#source-data)
   - [Parsing challenges](### XML parsing challenges)
   - [Domain/language knowledge](#### Domain & language knowledge)
   - [City names](#### City names)
