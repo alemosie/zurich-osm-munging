@@ -156,13 +156,12 @@ Newest record | "2017-03-11T13:48:07Z" | `db.just_zurich.find().sort({"created.t
 2642
 ```
 
-Note: "created.user" is not a viable field for uniqueness in this dataset -- four usernames share the same id:
+*Note: "created.user" is not a viable field for uniqueness in this dataset -- four usernames share the same id.*
 
-\> `db.just_zurich.aggregate([{$group: {_id: {uid:"$created.uid"}, users: {$addToSet: "$created.user"}}}, {$project: {_id: 1,users: 1,num_users: { $size: "$users" }}}, {$match: {num_users: {$gt: 1}}}])
+\> `db.just_zurich.aggregate([{$group: {_id: {uid:"$created.uid"}, users: {$addToSet: "$created.user"}}}, {$project: {_id: 1,users: 1,num_users: { $size: "$users" }}}, {$match: {num_users: {$gt: 1}}}])`
 
 ```javascript
 { "_id" : { "uid" : "5351349" }, "users" : [ "Jan:", "Jan Huber" ], "num_users" : 2 }
-
 { "_id" : { "uid" : "5007203" }, "users" : [ "someone12345678", "ManuDroid94" ], "num_users" : 2 }
 ```
 
