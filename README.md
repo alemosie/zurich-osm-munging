@@ -189,6 +189,7 @@ Newest record | "2017-03-11T13:48:07Z" | `db.just_zurich.find().sort({"created.t
 
 \> `db.just_zurich.aggregate([{$group: {_id: {uid:"$created.uid"}, users: {$addToSet: "$created.user"}}}, {$project: {_id: 1,users: 1,num_users: { $size: "$users" }}}, {$match: {num_users: {$gt: 1}}}])`
 
+
 ```javascript
 { "_id" : { "uid" : "5351349" }, "users" : [ "Jan:", "Jan Huber" ], "num_users" : 2 }
 { "_id" : { "uid" : "5007203" }, "users" : [ "someone12345678", "ManuDroid94" ], "num_users" : 2 }
@@ -247,14 +248,7 @@ For the purposes of this exercise, I'm only considering tags that explicitly lis
 ```
 #### Which areas of the city have the most diverse cuisine?
 
-\> `db.just_zurich.aggregate([
-  {$match:{$and: [{"addr.city": {"$exists": 1}},{"amenity":"restaurant"}]}},
-  {$group:{_id: {postcode: "$addr.postcode"}, cuisines:{"$addToSet":"$cuisine"}}},
-  { $unwind: "$cuisines" },
-  { $unwind: "$cuisines" },
-  {$group:{_id: "$_id.postcode", cuisines:{"$addToSet":"$cuisines"}, num_cuisines:{"$sum": 1}}},
-  {$sort: {num_cuisines: -1}},
-  {$limit: 5}])`
+\> `db.just_zurich.aggregate([{$unwind: "$cuisine"}, {$match:{$and: [{"addr.city": {"$exists": 1}}, {"amenity":"restaurant"}]}}, {$group:{_id: "$addr.postcode", cuisines:{"$addToSet":"$cuisine"}}},{$project: {_id: 1, cuisines: 1,num_cuisines: { $size: "$cuisines" }}}, {$sort: {num_cuisines: -1}}, {$limit: 3}])`
 
 
 ```javascript
@@ -277,8 +271,6 @@ For the purposes of this exercise, I'm only considering tags that explicitly lis
   [ "regional", "thai", "kebab", "indian", "italian", "steak_house", "japanese", "asian", "Schnitzel", "bagels" ],
   "num_cuisines" : 10 }
 ```
-
-*Note: the double "unwind" was necessary to extract values from restaurants that had more than one associated cuisine.*
 
 
 ## Looking ahead
