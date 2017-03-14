@@ -33,11 +33,11 @@ Contents:
 
 Folder/file | Description
 --- | ---
-`Extracts/` | contains osm and json sample data
-`Images/` | contains images used in this README
+`extracts/` | contains osm and json sample data
+`images/` | contains images used in this README
 `clean_data.py` | master file for OSM XML sanitization
-`insert_data.py` | master file for inserting sanitized json data into
-`process_sample.py` | generate `zurich_largerz_extract.osm` for sanitization testing
+`insert_data.py` | master file for inserting sanitized json data into MongoDB
+`process_sample.py` | generate `zurich_larger_extract.osm` for sanitization testing
 `user_viz.py` | generate donut chart to visualize top user activity
 `zurich_cities.py` | strategy file for auditing cities in the data
 
