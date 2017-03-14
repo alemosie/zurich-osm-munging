@@ -24,6 +24,13 @@ I chose to parse Zurich data because of an interest in the city, not a personal 
 
 Because of special characters in German (e.g. umlaut), I needed to familiarize myself with [Python's handling of unicode](https://docs.python.org/2/howto/unicode.html).
 
+
+#### City names
+
+Top 20 matches to Zurich:
+
+[('Zurich', 100), ('Zuerich', 92), ('zuerich', 92), ('Zürich', 91), ('zürich', 91), ('Egg bei Zürich', 82), ('Zürich-Flughafen', 78), ('Zürich 50 Oerlikon', 78), ('Zürich-Altstetten', 78), ('Zürich Gockhausen', 78), ('Muri', 68), ('Höri', 60), ('Forch', 55), ('Buchs', 55), ('Embrach', 46), ('Zumikon', 46), ('Zufikon', 46), ('Neerach', 46), ('Uerikon', 46), ('Seuzach', 46)]
+
 #### Tag key separators
 
 OSM records level of specificity in the key values in tags. In the json conversion process, it made the most sense to nest these attributes together, but the approach had to differ based on the tag. For the purposes of this exercise, I only processed two-tiered keys (one separator), and disregarded three-tiered keys.
@@ -87,7 +94,121 @@ Searches for `"Salomon-Bleuler-Weg"` on [other maps](https://www.google.com/maps
 <img src="images/sbw.png" width="200">
 
 
+## Data overview
 
+Data filtered down to just Zurich.
+
+### File attributes
+
+File | Type | Size
+--- | --- | ---
+`zurich_switzerland.osm` | Source | 614.7 MB
+`just_zurich.json` | Sanitized | 702.2 MB
+
+
+### Data counts
+
+ | Count | Query
+--- | --- | ---
+All | 3146959 | `db.just_zurich.count()`
+Nodes | 2706650 | `db.just_zurich.find({"type":"node"}).count()`
+Ways  | 432670| `db.just_zurich.find({"type":"way"}).count()`
+Relations | 134 | `db.just_zurich.find({"type":"relation"}).count()`
+
+#### Users
+
+**Unique users**
+
+\> `db.just_zurich.distinct("created.uid").length`
+
+```
+2642
+```
+
+
+db.just_zurich.aggregate([
+  {"$match": {$and: [{"addr.city": {"$exists": 1}}, {"amenity": {"$exists": 1}}]}},
+  {$group: {_id: "$amenity",count:{$sum:1}}},
+  {"$sort": {"count": -1}},
+  {"$limit": 5}])`
+
+
+#### Dates
+
+| Result | Query
+--- | --- | ---
+Earliest record | |
+Latest record ||
+
+### Zurich exploration
+
+For the purposes of this exercise, I'm only considering tags that explicitly list Zurich as a city as within Zurich.
+
+##### Number of records
+\> `db.just_zurich.aggregate([{"$match": {"addr.city": {"$exists": 1}}}, {$group:{_id:null,count:{$sum:1}}}])`
+
+```
+22849
+```
+
+
+###### What are the top 5 amenities?
+
+\> `db.just_zurich.aggregate([
+  {"$match": {$and: [{"addr.city": {"$exists": 1}}, {"amenity": {"$exists": 1}}]}},
+  {$group: {_id: "$amenity",count:{$sum:1}}},
+  {"$sort": {"count": -1}},
+  {"$limit": 5}])`
+
+```
+{ "_id" : "restaurant", "count" : 327 }
+{ "_id" : "car_sharing", "count" : 212 }
+{ "_id" : "school", "count" : 67 }
+{ "_id" : "place_of_worship", "count" : 64 }
+{ "_id" : "cafe", "count" : 52 }
+```
+###### Which postcodes have the most diverse cuisine?
+
+\> `db.just_zurich.aggregate([
+  {"$match":{$and: [{"addr.city": {"$exists": 1}},{"amenity":"restaurant"}]}},
+  {$group:{_id: {postcode: "$addr.postcode"}, cuisines:{"$addToSet":"$cuisine"}}},
+  { $unwind: "$cuisines" },
+  { $unwind: "$cuisines" },
+  {$group:{_id: "$_id.postcode", cuisines:{"$addToSet":"$cuisines"}, num_cuisines:{"$sum": 1}}},
+  {"$sort": {num_cuisines: -1}},
+  {"$limit": 5}])`
+
+```
+{ "_id" : "8004", "cuisines" :
+  [ "international", "chinese", "tapas", "lebanese", "italian", "indian", "kebab", "spanish", "kosher", "coffee_shop", "tea", "burger", "cake", "regional", "vegan", "japanese", "american", "Bier, Bar", "vegetarian", "asian", "vietnamese" ],
+  "num_cuisines" : 22 }
+
+{ "_id" : "8005", "cuisines" :
+  [ "american", "vegetarian", "asian", "italian", "pizza", "thai", "international", "regional", "indian", "turkish", "burger", "greek", "lebanese" ], "num_cuisines" : 13 }
+
+{ "_id" : "8001", "cuisines" :
+  [ "pizza", "italian", "asian", "bistro", "indian", "brazilian", "spanish", "fish", "regional", "thai", "greek", "sushi", "japanese" ],
+  "num_cuisines" : 13 }
+
+{ "_id" : "8006", "cuisines" :
+  [ "pizza", "asian", "swiss", "indian", "coffee_shop", "italian", "lebanese", "African", "thai", "international" ],
+  "num_cuisines" : 10 }
+
+{ "_id" : "8050", "cuisines" :
+  [ "regional", "thai", "kebab", "indian", "italian", "steak_house", "japanese", "asian", "Schnitzel", "bagels" ],
+  "num_cuisines" : 10 }
+```
+
+## Looking ahead
+
+"created" : {
+  "changeset" : "178374",
+  "version" : "1",
+  "uid" : "7010",
+  "timestamp" : "2007-07-30T00:43:27Z",
+  "user" : "GarryX3D"
+},
+"created_by" : "JOSM",
 
 ## Resources
 
@@ -95,3 +216,5 @@ Searches for `"Salomon-Bleuler-Weg"` on [other maps](https://www.google.com/maps
 - [Elementtree API](https://docs.python.org/2/library/xml.etree.elementtree.html)
 - [Unicode & Python](https://docs.python.org/2/howto/unicode.html)
 - [Permutations for "street" in German](http://www.acronymfinder.com/Stra%C3%9Fe-\(German%3A-Street\)-\(STR\).html)
+- [District validator](https://www.inyourpocket.com/zurich/Zurichs-districts_71823f?&page=2)
+- [Fuzzywuzzy](https://pypi.python.org/pypi/fuzzywuzzy)  string match

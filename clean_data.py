@@ -9,21 +9,20 @@ import random
 # for unicode
 import codecs
 
+# to extract zurich names
+import fuzzywuzzy
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
+
 # Per http://wiki.openstreetmap.org/wiki/OSM_XML#Contents, only three types of root tags: node, way, relation
 """
-Challenges:
-
-    - What to do with refs
-    http://wiki.openstreetmap.org/wiki/Key:ref
-
-
 Analyses:
     - How many elements changed per changeset
 
 """
 
 FULL_PATH = "zurich_switzerland.osm"
-EXTRACT_PATH = "zurich_osm_extract.osm"
+EXTRACT_PATH = "extracts/zurich_osm_extract.osm"
 
 class ProcessParentTag():
 
@@ -63,21 +62,44 @@ class ProcessChildren():
         return dict(tag_document.items() + member_document.items() + nd_document.items())
 
     def process_nested_key(self, attrs, key):
-        split = key.split(":") if ":" in key else key.split(".")
+        split = key.split(":") if ":" in key else key.split(".") # account for the two key specifiers
 
         # decision: only account for two layers of specificity in keys
         if len(split) == 2:
             if split[0] in attrs:
+                # add the new attribute to the base key dictionary
                 attrs[split[0]][split[1]] = attrs[key]["base_value"]
             else:
                 if split[0] == "source" and split[1] in attrs:
+                    # add the source as an attribute on the main key
                     attrs[split[1]][split[0]] = attrs[key]["base_value"]
                 else:
-                    attrs[split[0]] = {}
+                    # create a base dictionary out of the current values
+                    attrs[split[0]] = {split[1]: attrs[key]["base_value"]}
 
         # delete old key with colon
         attrs.pop(key, None)
         return attrs
+
+    def process_zurich(self, attrs):
+        """Standardize variations of Zurich and cull records that are not in Zurich proper if city is specified.
+
+        District number labels are accounted for via `isdigit()`
+        Fuzzywuzzy intelligently picks up on deviations of "Zurich" without overt regex
+        Ratio of 70 determined by querying all cities in the set via Mongo, and applying Fuzzywuzzy's processing feature.
+        """
+        if "addr" in attrs and "city" in attrs["addr"]:
+            city = attrs["addr"]["city"]
+            if fuzz.ratio("Zurich", city) > 70 or city.isdigit():
+                attrs["addr"]["city"] = "Zürich"
+                return attrs
+            else:
+                # cull all records that are not in Zurich proper
+                return {}
+        else:
+            # when no city is listed, default to "keep"
+            return attrs
+
 
     def sanitize_base_values(self, attrs):
         for attr in attrs:
@@ -92,6 +114,7 @@ class ProcessChildren():
             return value
 
     def create_tag_document(self, tags):
+        """Create a document that represents all child "tag" elements"""
         if len(tags) > 0:
             # to account for things like "wheelchair" and "wheelchair: description"
             children_attributes = {c.attrib["k"]:
@@ -101,7 +124,8 @@ class ProcessChildren():
                 if ":" in key or "." in key:
                     self.process_nested_key(children_attributes, key)
             # returns all element's children that are tag types
-            return self.sanitize_base_values(children_attributes)
+            attrs = self.sanitize_base_values(children_attributes)
+            return self.process_zurich(attrs)
         else:
             return {}
 
@@ -180,5 +204,5 @@ class ParseOSM(object):
             pp(random.sample(self.documents, print_extract))
 
 if __name__ == "__main__":
-    osm = ParseOSM(FULL_PATH)
-    osm.write_to_file(filename="data/zurich.json", print_extract=10)
+    osm = ParseOSM("data/zurich_switzerland.osm")
+    osm.write_to_file(filename="data/just_zurich.json", print_extract=10)
