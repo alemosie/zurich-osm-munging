@@ -151,10 +151,10 @@ Relations | 134 | `db.just_zurich.find({"type":"relation"}).count()`
 
 #### Dates
 
-| Result | Query
+Type | Result | Query
 --- | --- | ---
-Earliest record | "2006-05-05T16:19:04Z" | `db.just_zurich.find().sort({"created.timestamp": 1}).limit(1)`
-Latest record | "2017-03-11T13:48:07Z" | `db.just_zurich.find().sort({"created.timestamp": -1}).limit(1)`
+Oldest record | "2006-05-05T16:19:04Z" | `db.just_zurich.find().sort({"created.timestamp": 1}).limit(1)`
+Newest record | "2017-03-11T13:48:07Z" | `db.just_zurich.find().sort({"created.timestamp": -1}).limit(1)`
 
 ### Zurich exploration
 
