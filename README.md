@@ -73,7 +73,7 @@ Also, some separators departed from the standard `:` separator, and had `.`, lik
 
 I had to conduct research on the data to ensure that I was handling the data correctly. Take the following XML:
 
-```
+```xml
 <tag k="destination" v="Bern;Chur;Luzern;Flughafen;Nordring-Zürich"/>
 <tag k="source:maxspeed" v="sign"/>
 <tag k="destination:symbol" v="airport"/>
@@ -136,6 +136,8 @@ Relations | 134 | `db.just_zurich.find({"type":"relation"}).count()`
 
 ##### Top five users vs the rest
 
+\> ` db.just_zurich.aggregate([{$group: {_id:{"user": "$created.user","uid": "$created.uid"},count:{$sum:1}}},{"$sort": {"count": -1}},{"$limit": 5}])`
+
 ```javascript
 { "_id" : { "user" : "mdk", "uid" : "178186" }, "count" : 566235 }
 { "_id" : { "user" : "SimonPoole", "uid" : "92387" }, "count" : 334879 }
@@ -165,7 +167,6 @@ For the purposes of this exercise, I'm only considering tags that explicitly lis
 22849
 ```
 
-
 ##### What are the top 5 amenities?
 
 \> `db.just_zurich.aggregate([
@@ -181,16 +182,17 @@ For the purposes of this exercise, I'm only considering tags that explicitly lis
 { "_id" : "place_of_worship", "count" : 64 }
 { "_id" : "cafe", "count" : 52 }
 ```
-##### Which postcodes have the most diverse cuisine?
+##### Which areas of the city (by postcode) have the most diverse cuisine?
 
 \> `db.just_zurich.aggregate([
-  {"$match":{$and: [{"addr.city": {"$exists": 1}},{"amenity":"restaurant"}]}},
+  {$match:{$and: [{"addr.city": {"$exists": 1}},{"amenity":"restaurant"}]}},
   {$group:{_id: {postcode: "$addr.postcode"}, cuisines:{"$addToSet":"$cuisine"}}},
   { $unwind: "$cuisines" },
   { $unwind: "$cuisines" },
   {$group:{_id: "$_id.postcode", cuisines:{"$addToSet":"$cuisines"}, num_cuisines:{"$sum": 1}}},
-  {"$sort": {num_cuisines: -1}},
-  {"$limit": 5}])`
+  {$sort: {num_cuisines: -1}},
+  {$limit: 5}])`
+
 
 ```javascript
 { "_id" : "8004", "cuisines" :
@@ -215,16 +217,52 @@ For the purposes of this exercise, I'm only considering tags that explicitly lis
 
 Note: the double "unwind" was necessary to extract values from restaurants that had more than one associated cuisine.
 
+
 ## Looking ahead
 
-"created" : {
-  "changeset" : "178374",
-  "version" : "1",
-  "uid" : "7010",
-  "timestamp" : "2007-07-30T00:43:27Z",
-  "user" : "GarryX3D"
-},
-"created_by" : "JOSM",
+### Payments
+
+Currently, the payments schema looks like the following, where keys are descriptive and values are standardized:
+
+```javascript
+"payment" : {
+		"notes" : "yes",
+		"coins" : "yes",
+		"cash" : "yes",
+		"american_express" : "yes",
+		"visa_electron" : "yes",
+		"visa" : "yes",
+		"mastercard" : "yes",
+		"maestro" : "yes"
+  }
+```
+
+With this schema, it is difficult to perform aggregations in the MongoDB framework. One can really only query the payments sub-document for counts, rather than form more complex queries.
+
+> \> `db.just_zurich.aggregate([{"$match":{$and: [{"addr.city": {"$exists": 1}},{"payment": {"$exists": 1} } ] } }, {$group:{_id: null, "num_payments": {"$sum": 1} } }, {"$sort": {num_payments: -1}}, {"$limit": 10}])`
+
+> Returns `{ "_id" : null, "num_payments" : 25 }`
+
+Whereas:
+
+> \> `db.just_zurich.aggregate([{"$match":{$and: [{"addr.city": {"$exists": 1}},{"payment": {"$exists": 1} } ] } }, {$group:{_id: "$payment", "num_payments": {"$sum": 1} } }, {"$sort": {num_cuisines: -1}}, {"$limit": 10}])`
+
+> Returns `"_id" : { "coins" : "yes", "bitcoin" : "yes" }`, rather than payment types as intended.
+
+In the future, I'd want to sanitize the payments field so that the structure for a given document follows this schema: `{"payments": ["notes", "visa", "bitcoin"]}`.
+
+### Limits of "addr:city"
+
+My method for extracting Zurich-only data needs improvement. At the moment, the only filter I apply is through the "addr:city" key -- if the value doesn't fuzzy match to "Zurich", then I skip the record.
+
+I loaded a non-filtered version of the dataset into MongoDB, and compared the counts of both collections:
+
+| Count | Query
+--- | --- | ---
+Filtered | 3146959 | `db.just_zurich.count()`
+Unfiltered | 6084959 | `db.all_zurich.count()`
+
+Despite culling around 3 million records, I don't do any checks for location other than "addr:city". In the future, I may consider using records' `lat` and `lon` keys to determine whether a document falls within what I consider to be the city boundaries.
 
 ## Resources
 
