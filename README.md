@@ -38,6 +38,7 @@ Folder/file | Description
 `clean_data.py` | master file for OSM XML sanitization
 `insert_data.py` | master file for inserting sanitized json data into MongoDB
 `process_sample.py` | generate `zurich_larger_extract.osm` for sanitization testing
+`report.pdf` | pdf version of this README (though not as nicely formatted)
 `user_viz.py` | generate donut chart to visualize top user activity
 `zurich_cities.py` | strategy file for auditing cities in the data
 
