@@ -88,16 +88,6 @@ OSM records level of specificity in the key values in tags. In the json conversi
 
 Two-tier key types & conversions:
 ```xml
-<tag k="addr:street" v="Bülach" />
-<tag k="addr:street" v="Spitalstrasse" />
-
-# converted to:
-"addr": {
-  "city": "Bülach",
-  "street": "Spitalstrasse"
-}
-```
-```xml
 <tag k="wheelchair" v="limited"/>
 <tag k="wheelchair:description" v="rund 50% der Fahrzeuge verkehren mit Niederflur-Einstieg"/>
 
